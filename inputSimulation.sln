@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inputSimulation", "inputSimulation.csproj", "{27EFE39B-2224-47C3-AA7B-D7E7E4ABB29D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27EFE39B-2224-47C3-AA7B-D7E7E4ABB29D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27EFE39B-2224-47C3-AA7B-D7E7E4ABB29D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27EFE39B-2224-47C3-AA7B-D7E7E4ABB29D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27EFE39B-2224-47C3-AA7B-D7E7E4ABB29D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74C1DC92-00B1-4AB3-A184-FD29C43CC57C}
+	EndGlobalSection
+EndGlobal
