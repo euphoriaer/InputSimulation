@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -116,19 +117,59 @@ namespace inputSimulation
 
         private void Run_Click(object sender, EventArgs e)
         {
+
             if (!string.IsNullOrEmpty(keyMs.Text))
             {
-                int.TryParse(keyMs.Text, out inputMs);
+                if (keyMs.Text.Contains("-"))
+                {
+                    var randomNumbers=keyMs.Text.Split('-');
+                    int x1 = int.Parse(randomNumbers[0]);
+                    int x2 = int.Parse(randomNumbers[1]);
+					Random random = new Random();
+					inputMs = random.Next(x1, x2);
+					Debug.WriteLine(inputMs);
+				}
+                else
+                {
+					int.TryParse(keyMs.Text, out inputMs);
+				}
+                
             }
 
             if (!string.IsNullOrEmpty(mouseLeftMs.Text))
             {
-                int.TryParse(mouseLeftMs.Text, out inMouseLeft);
+				if (mouseLeftMs.Text.Contains("-"))
+				{
+					var randomNumbers = mouseLeftMs.Text.Split('-');
+					int x1 = int.Parse(randomNumbers[0]);
+					int x2 = int.Parse(randomNumbers[1]);
+					Random random = new Random();
+					inMouseLeft = random.Next(x1, x2);
+                    Debug.WriteLine(inMouseLeft);
+                }
+                else
+                {
+					int.TryParse(mouseLeftMs.Text, out inMouseLeft);
+				}
+				
             }
 
             if (!string.IsNullOrEmpty(mouseRighMs.Text))
             {
-                int.TryParse(mouseRighMs.Text, out inMouseRight);
+				if (mouseRighMs.Text.Contains("-"))
+				{
+					var randomNumbers = mouseRighMs.Text.Split('-');
+					int x1 = int.Parse(randomNumbers[0]);
+					int x2 = int.Parse(randomNumbers[1]);
+					Random random = new Random();
+					inMouseRight = random.Next(x1, x2);
+					Debug.WriteLine(inMouseRight);
+				}
+                else
+                {
+					int.TryParse(mouseRighMs.Text, out inMouseRight);
+				}
+				
             }
 
             if (isRuning)
@@ -170,7 +211,16 @@ namespace inputSimulation
                         {
                             while (checkKey.Checked)
                             {
-                                Thread.Sleep(inputMs);
+								if (keyMs.Text.Contains("-"))
+								{
+									var randomNumbers = keyMs.Text.Split('-');
+									int x1 = int.Parse(randomNumbers[0]);
+									int x2 = int.Parse(randomNumbers[1]);
+									Random random = new Random();
+									inputMs = random.Next(x1, x2);
+									Debug.WriteLine(inputMs);
+								}
+								Thread.Sleep(inputMs);
                                 KeyS();
                                 checkKey.Checked = isRuning;
                             }
@@ -184,7 +234,16 @@ namespace inputSimulation
                         {
                             while (checkMouseLeft.Checked)
                             {
-                                Thread.Sleep(inMouseLeft);
+								if (mouseLeftMs.Text.Contains("-"))
+								{
+									var randomNumbers = mouseLeftMs.Text.Split('-');
+									int x1 = int.Parse(randomNumbers[0]);
+									int x2 = int.Parse(randomNumbers[1]);
+									Random random = new Random();
+									inMouseLeft = random.Next(x1, x2);
+									Debug.WriteLine(inMouseLeft);
+								}
+								Thread.Sleep(inMouseLeft);
                                 MouseLeft();
                                 checkMouseLeft.Checked = isRuning;
                             }
@@ -198,7 +257,16 @@ namespace inputSimulation
                         {
                             while (checkMouseRight.Checked)
                             {
-                                Thread.Sleep(inMouseRight);
+								if (mouseRighMs.Text.Contains("-"))
+								{
+									var randomNumbers = mouseRighMs.Text.Split('-');
+									int x1 = int.Parse(randomNumbers[0]);
+									int x2 = int.Parse(randomNumbers[1]);
+									Random random = new Random();
+									inMouseRight = random.Next(x1, x2);
+									Debug.WriteLine(inMouseRight);
+								}
+								Thread.Sleep(inMouseRight);
                                 MouseRight();
                                 checkMouseRight.Checked = isRuning;
                             }
