@@ -220,6 +220,10 @@ namespace inputSimulation
 									inputMs = random.Next(x1, x2);
 									Debug.WriteLine(inputMs);
 								}
+								else
+								{
+									int.TryParse(keyMs.Text, out inputMs);
+								}
 								Thread.Sleep(inputMs);
                                 KeyS();
                                 checkKey.Checked = isRuning;
@@ -243,6 +247,10 @@ namespace inputSimulation
 									inMouseLeft = random.Next(x1, x2);
 									Debug.WriteLine(inMouseLeft);
 								}
+								else
+								{
+									int.TryParse(mouseLeftMs.Text, out inMouseLeft);
+								}
 								Thread.Sleep(inMouseLeft);
                                 MouseLeft();
                                 checkMouseLeft.Checked = isRuning;
@@ -265,6 +273,10 @@ namespace inputSimulation
 									Random random = new Random();
 									inMouseRight = random.Next(x1, x2);
 									Debug.WriteLine(inMouseRight);
+								}
+								else
+								{
+									int.TryParse(mouseRighMs.Text, out inMouseRight);
 								}
 								Thread.Sleep(inMouseRight);
                                 MouseRight();
